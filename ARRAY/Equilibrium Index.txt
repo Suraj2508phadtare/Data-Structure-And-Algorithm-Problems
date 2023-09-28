@@ -1,0 +1,44 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+
+	public static int arrayEquilibriumIndex(int[] arr){  
+		//Your code goes here
+		
+		int n = arr.length;
+		
+	//	int sumarr[] = new int[n];
+
+		
+
+		int totalSum = 0;
+		int temp = 0;
+
+		for(int i=0; i<n; i++){
+			totalSum += arr[i];
+		}
+
+		for(int i=0; i<n; i++){
+
+			temp += arr[i];
+
+			  int leftSum=0;
+
+             int rightSum=0;
+
+			if(i != 0){
+				leftSum = temp -arr[i];
+			}
+
+			if(i != n-1) {
+				rightSum = totalSum - temp;
+			}
+
+			if(leftSum == rightSum){
+				return i;
+			}
+		}
+
+		return -1;
+	}
+}

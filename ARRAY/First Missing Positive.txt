@@ -1,0 +1,26 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+	public static int firstMissing(int[] arr, int n) {
+		// Write your code here.
+
+		int count = 1;
+
+		Arrays.sort(arr);	
+
+		for(int i=0; i<n; i++){
+
+			if(arr[i] > 0){
+				if(count == arr[i]){
+					count++;
+			 }else{
+				 return count;
+			 }
+			
+			}
+		 
+		}
+
+		return  count;	
+	}
+}
