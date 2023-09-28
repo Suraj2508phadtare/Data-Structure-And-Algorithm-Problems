@@ -1,0 +1,25 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+	public static void selectionSort(int arr[], int n) {
+		// Write your code here.
+
+		for(int i=0; i< n; i++){
+
+			int val = i;
+
+			for(int j=i+1; j<n; j++){
+
+				
+
+				val = arr[j] < arr[val] ? j : val;
+
+				if(j == n-1){
+					int temp = arr[i];
+					arr[i] = arr[val];
+					arr[val] = temp;
+				}
+			}
+		}
+	}
+}

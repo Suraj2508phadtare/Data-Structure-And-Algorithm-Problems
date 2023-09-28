@@ -1,0 +1,28 @@
+import java.util.* ;
+import java.io.*; 
+
+public class Solution {
+
+	public static void insertionSort(int n , int[] arr) {
+		// Write your code here.
+
+		int idxTrack = 0;
+		for(int i=1; i< arr.length; i++){
+			idxTrack = i;
+			for(int j=i-1; j>=0; j--){
+
+				if(arr[idxTrack] < arr[j]){
+					
+					int temp = arr[j];
+					arr[j] = arr[idxTrack];
+					arr[idxTrack] = temp;
+
+					idxTrack--;
+				}else{
+					break;
+				}
+
+			}
+		}
+	}
+}

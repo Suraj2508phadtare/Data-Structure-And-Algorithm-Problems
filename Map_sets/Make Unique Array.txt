@@ -1,0 +1,14 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+
+	public static int minElementsToRemove(ArrayList<Integer> arr) {
+
+		// Write your code here
+		int count = 0;
+
+		HashSet<Integer> sets = new HashSet<>(arr);
+		count = arr.size() - sets.size(); 
+		return count;
+	}
+}

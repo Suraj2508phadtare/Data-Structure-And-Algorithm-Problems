@@ -1,0 +1,26 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+	public static int[][] rotateMatRight(int[][] mat, int n, int m, int k) {
+		// Write your code here.
+
+
+        int[][] res = new int[n][m];
+
+        for(int i=0; i<n; i++){
+
+            for(int j=0; j<m; j++){
+
+                if(j+k < m){
+
+                    res[i][j+k] = mat[i][j];
+                }else{
+
+                    res[i][(j+k)%m] = mat[i][j];
+                }
+            }
+        }
+
+        return res;
+	}
+}

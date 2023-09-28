@@ -1,0 +1,26 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+	public static int minimumParentheses(String pattern) {
+		// Write your code here.
+		
+		int count1 = 0;
+		int count2 = 0;
+
+		for(int i=0; i<pattern.length(); i++){
+
+			if(pattern.charAt(i) == '('){
+				count1++;
+			}else if(pattern.charAt(i) == ')'){
+				if(count1 > 0){
+					count1--;
+				}else{
+					count2++;
+				}
+			}
+		}
+
+		return count1+count2;
+	
+	}
+}

@@ -1,0 +1,43 @@
+import java.util.* ;
+
+import java.io.*; 
+
+public class Solution {
+
+    public static String encode(String message) {
+
+        // Write your code here.
+
+        // String ans = "";
+
+        StringBuilder ans = new StringBuilder();
+
+        for (int i = 0; i < message.length(); i++) {
+
+            char curChar = message.charAt(i);
+
+            int charFreq = 1;
+
+            while (i + 1 < message.length() && message.charAt(i + 1) == curChar) {
+
+                i++;
+
+                charFreq++;
+
+            }
+
+            ans.append(curChar);
+
+            ans.append(charFreq);
+
+ 
+
+        // ans = ans + curChar +charFreq;   
+
+    }
+
+        return ans.toString() ;
+
+    }
+
+}

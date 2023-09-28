@@ -1,0 +1,43 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+	public static String nextLargestPalindrome(String number, int length) {
+		// Write your code here.
+
+        int num1 = Integer.parseInt(number);
+        int num = num1+1;
+        while(isPalindrome(num) == 0){
+            num = num+1;
+        }
+
+        String result = Integer.toString(num);
+        return result;
+	}
+
+
+       static int isPalindrome(int num)
+    {
+       
+        // Declaring variables
+        int n, k, rev = 0;
+       
+        // storing num in n so that we can compare it later
+        n = num;
+       
+        // while num is not 0 we find its reverse and store
+        // in rev
+        while (num != 0) {
+            k = num % 10;
+            rev = (rev * 10) + k;
+            num = num / 10;
+        }
+       
+        // check if num and its reverse are same
+        if (n == rev) {
+            return 1;
+        }
+        else {
+            return 0;
+        }
+    }
+}

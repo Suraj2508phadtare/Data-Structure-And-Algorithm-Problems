@@ -1,0 +1,49 @@
+import java.io.*;
+import java.util.* ;
+
+public class Solution {
+	public static int findMajority(int[] arr, int n) {
+		// Write your code here.
+
+    int maj_idx = 0;
+    int count = 0;
+    
+    if(n == 1){
+      return arr[0];
+    }
+    for(int i=0; i< n; i++){
+
+      if(arr[maj_idx] == arr[i]){
+        count++;
+      }else{
+        count--;
+      }
+      
+      if(count == 0){
+        maj_idx = i;
+        count =1;
+      }
+      
+      
+    }
+
+   return isMajority(arr[maj_idx], arr, n);
+	}
+
+  private static int isMajority(int ele, int[] arr, int n) {
+    int count = 0;
+   
+    for(int i=0; i< arr.length; i++){
+      
+      if(ele == arr[i]){
+        count++;
+      }
+    }
+
+    if(count > n/2){
+      return ele;
+    }
+    
+    return -1;
+  }
+}
